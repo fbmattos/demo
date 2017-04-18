@@ -8,7 +8,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * EventItem
  */
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-18T00:44:01.054Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaClientCodegen", date = "2017-04-18T13:01:50.346Z")
 public class EventItem {
   @SerializedName("id")
   private String id = null;
