@@ -5,7 +5,7 @@ info:
     \nTips:\n  - To fork and work on your own version of this API, select 'Fork API'\
     \ from the '...' menu\n  - To share and collaborate on your API, email us clicking\
     \ below with subject line *\"Special trial for DockerCon participants\"*\n\nClick\
-    \ below to email us:\n"
+    \ below to email us:\nmailto:support@swaggerhub.com\n"
   version: "1.0.0"
   title: "DockerCon 2017 API"
   contact:
