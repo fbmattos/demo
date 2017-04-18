@@ -15,7 +15,7 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-04-17T23:19:33.966Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-04-18T13:01:55.825Z")
 public abstract class AgendaApiService {
     public abstract Response agendaGet(String searchString,Integer skip,Integer limit,SecurityContext securityContext) throws NotFoundException;
     public abstract Response agendaPost(EventItem eventItem,SecurityContext securityContext) throws NotFoundException;
