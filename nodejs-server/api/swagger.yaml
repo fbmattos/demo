@@ -1,0 +1,209 @@
+---
+swagger: "2.0"
+info:
+  description: "This is an exclusive API example for DockerCon 2017 participants.\n\
+    \nTips:\n  - To fork and work on your own version of this API, select 'Fork API'\
+    \ from the '...' menu\n  - To share and collaborate on your API, email us clicking\
+    \ below with subject line *\"Special trial for DockerCon participants\"*\n\nClick\
+    \ below to email us:\n"
+  version: "1.0.0"
+  title: "DockerCon 2017 API"
+  contact:
+    email: "support@swaggerhub.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "virtserver.swaggerhub.com"
+basePath: "/DockerCon17/DockerCon17/1.0.0"
+tags:
+- name: "speakers"
+  description: "Operations for speaker"
+- name: "agenda"
+  description: "Operations for agenda"
+schemes:
+- "https"
+paths:
+  /agenda:
+    get:
+      tags:
+      - "agenda"
+      summary: "Searches list of events"
+      description: "By passing in the appropriate options, you can search for\navailable\
+        \ events in the system\n"
+      operationId: "agendaGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "searchString"
+        in: "query"
+        description: "pass an optional search string for looking up events"
+        required: false
+        type: "string"
+      - name: "skip"
+        in: "query"
+        description: "number of records to skip for pagination"
+        required: false
+        type: "integer"
+        minimum: 0
+        format: "int32"
+      - name: "limit"
+        in: "query"
+        description: "maximum number of records to return"
+        required: false
+        type: "integer"
+        maximum: 50
+        minimum: 0
+        format: "int32"
+      responses:
+        200:
+          description: "Search results matching criteria"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/EventItem"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "Agenda"
+    post:
+      tags:
+      - "agenda"
+      summary: "Adds an event"
+      description: "Adds an event to the system"
+      operationId: "agendaPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "EventItem"
+        description: "Event to add"
+        required: false
+        schema:
+          $ref: "#/definitions/EventItem"
+      responses:
+        201:
+          description: "item created"
+        400:
+          description: "invalid input, object invalid"
+        409:
+          description: "an existing item already exists"
+      x-swagger-router-controller: "Agenda"
+  /speakers:
+    get:
+      tags:
+      - "speakers"
+      summary: "Searches list of speakers"
+      description: "By passing in the appropriate options, you can search for\nspeakers\
+        \ in the system\n"
+      operationId: "speakersGET"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "searchString"
+        in: "query"
+        description: "pass an optional search string for looking up speakers"
+        required: false
+        type: "string"
+      - name: "skip"
+        in: "query"
+        description: "number of records to skip for pagination"
+        required: false
+        type: "integer"
+        minimum: 0
+        format: "int32"
+      - name: "limit"
+        in: "query"
+        description: "maximum number of records to return"
+        required: false
+        type: "integer"
+        maximum: 50
+        minimum: 0
+        format: "int32"
+      responses:
+        200:
+          description: "Search results matching criteria"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/SpeakerItem"
+        400:
+          description: "bad input parameter"
+      x-swagger-router-controller: "Speakers"
+    post:
+      tags:
+      - "speakers"
+      summary: "Adds a speaker"
+      description: "Adds a speaker to the system"
+      operationId: "speakersPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "SpeakerItem"
+        description: "Speaker to add"
+        required: false
+        schema:
+          $ref: "#/definitions/SpeakerItem"
+      responses:
+        201:
+          description: "item created"
+        400:
+          description: "invalid input, object invalid"
+        409:
+          description: "an existing item already exists"
+      x-swagger-router-controller: "Speakers"
+definitions:
+  EventItem:
+    type: "object"
+    required:
+    - "date"
+    - "id"
+    - "name"
+    properties:
+      id:
+        type: "string"
+        format: "uuid"
+        example: "12345"
+      name:
+        type: "string"
+        example: "After Party"
+      date:
+        type: "string"
+        format: "int32"
+        example: "2017-04-18T19:30:00.000Z"
+  SpeakerItem:
+    type: "object"
+    required:
+    - "id"
+    - "name"
+    - "profile"
+    - "title"
+    properties:
+      id:
+        type: "string"
+        format: "uuid"
+        example: "12345"
+      name:
+        type: "string"
+        example: "BEN GOLUB"
+      title:
+        type: "string"
+        example: "CEO, Docker"
+      profile:
+        type: "string"
+        format: "int32"
+        example: "Ben Golub is a serial entrepreneur and start-up CEO, and the current\
+          \ CEO of Docker, the company behind the Docker open source platform, and\
+          \ the chief sponsor of the Docker ecosystem. Docker is an open platform\
+          \ for developers and system administrators to build, ship, run and orchestrate\
+          \ distributed applications. Prior to Docker, Golub was CEO of Gluster, the\
+          \ open source, scale out storage company, which was successfully acquired\
+          \ by Red Hat in 2011. Prior to Gluster, Golub was CEO of social media pioneer\
+          \ Plaxo, which was acquired by Comcast in 2008. Prior to Plaxo, Golub spent\
+          \ eight years at VeriSign, Inc., serving as Chief Marketing Officer, as\
+          \ Senior Vice President of the security and payments business, and as General\
+          \ Manager of VeriSign's managed security services business. Ben tweets at\
+          \ @golubbe"
