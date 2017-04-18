@@ -1,7 +1,7 @@
 {
   "name": "docker_con_2017_api",
   "version": "1.0.0",
-  "description": "This_is_an_exclusive_API_example_for_DockerCon_2017_participants_Tips____To_fork_and_work_on_your_own_version_of_this_API_select_Fork_API_from_the_____menu____To_share_and_collaborate_on_your_API_email_us_clicking_below_with_subject_line_Special_trial_for_DockerCon_participantsClick_below_to_email_us",
+  "description": "This_is_an_exclusive_API_example_for_DockerCon_2017_participants_Tips____To_fork_and_work_on_your_own_version_of_this_API_select_Fork_API_from_the_____menu____To_share_and_collaborate_on_your_API_email_us_clicking_below_with_subject_line_Special_trial_for_DockerCon_participantsClick_below_to_email_usmailtosupportswaggerhub_com",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "scripts": {

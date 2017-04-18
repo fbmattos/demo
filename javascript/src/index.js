@@ -1,6 +1,6 @@
 /**
  * DockerCon 2017 API
- * This is an exclusive API example for DockerCon 2017 participants.  Tips:   - To fork and work on your own version of this API, select 'Fork API' from the '...' menu   - To share and collaborate on your API, email us clicking below with subject line *\"Special trial for DockerCon participants\"*  Click below to email us: 
+ * This is an exclusive API example for DockerCon 2017 participants.  Tips:   - To fork and work on your own version of this API, select 'Fork API' from the '...' menu   - To share and collaborate on your API, email us clicking below with subject line *\"Special trial for DockerCon participants\"*  Click below to email us: mailto:support@swaggerhub.com 
  *
  * OpenAPI spec version: 1.0.0
  * Contact: support@swaggerhub.com
@@ -34,7 +34,7 @@
   'use strict';
 
   /**
-   * This_is_an_exclusive_API_example_for_DockerCon_2017_participants_Tips____To_fork_and_work_on_your_own_version_of_this_API_select_Fork_API_from_the_____menu____To_share_and_collaborate_on_your_API_email_us_clicking_below_with_subject_line_Special_trial_for_DockerCon_participantsClick_below_to_email_us.<br>
+   * This_is_an_exclusive_API_example_for_DockerCon_2017_participants_Tips____To_fork_and_work_on_your_own_version_of_this_API_select_Fork_API_from_the_____menu____To_share_and_collaborate_on_your_API_email_us_clicking_below_with_subject_line_Special_trial_for_DockerCon_participantsClick_below_to_email_usmailtosupportswaggerhub_com.<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
