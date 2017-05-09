@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="agendaGet"></a>
 # **agendaGet**
-> [EventItem] agendaGet(opts)
+> [AgendaItem] agendaGet(opts)
 
 Searches list of events
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[EventItem]**](EventItem.md)
+[**[AgendaItem]**](AgendaItem.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ var DockerCon2017Api = require('docker_con_2017_api');
 var apiInstance = new DockerCon2017Api.AgendaApi();
 
 var opts = { 
-  'eventItem': new DockerCon2017Api.EventItem() // EventItem | Event to add
+  'eventItem': new DockerCon2017Api.AgendaItem() // AgendaItem | Event to add
 };
 
 var callback = function(error, data, response) {
@@ -91,7 +91,7 @@ apiInstance.agendaPost(opts, callback);
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventItem** | [**EventItem**](EventItem.md)| Event to add | [optional] 
+ **eventItem** | [**AgendaItem**](AgendaItem.md)| Event to add | [optional] 
 
 ### Return type
 

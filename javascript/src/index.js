@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EventItem', 'model/SpeakerItem', 'api/AgendaApi', 'api/SpeakersApi'], factory);
+    define(['ApiClient', 'model/AgendaItem', 'model/SpeakerItem', 'api/AgendaApi', 'api/SpeakersApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/EventItem'), require('./model/SpeakerItem'), require('./api/AgendaApi'), require('./api/SpeakersApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/AgendaItem'), require('./model/SpeakerItem'), require('./api/AgendaApi'), require('./api/SpeakersApi'));
   }
-}(function(ApiClient, EventItem, SpeakerItem, AgendaApi, SpeakersApi) {
+}(function(ApiClient, AgendaItem, SpeakerItem, AgendaApi, SpeakersApi) {
   'use strict';
 
   /**
@@ -71,10 +71,10 @@
      */
     ApiClient: ApiClient,
     /**
-     * The EventItem model constructor.
-     * @property {module:model/EventItem}
+     * The AgendaItem model constructor.
+     * @property {module:model/AgendaItem}
      */
-    EventItem: EventItem,
+    AgendaItem: AgendaItem,
     /**
      * The SpeakerItem model constructor.
      * @property {module:model/SpeakerItem}

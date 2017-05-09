@@ -85,7 +85,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [DockerCon2017Api.EventItem](docs/EventItem.md)
+ - [DockerCon2017Api.AgendaItem](docs/AgendaItem.md)
  - [DockerCon2017Api.SpeakerItem](docs/SpeakerItem.md)
 
 

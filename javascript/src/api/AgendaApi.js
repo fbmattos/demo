@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/EventItem'], factory);
+    define(['ApiClient', 'model/AgendaItem'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/EventItem'));
+    module.exports = factory(require('../ApiClient'), require('../model/AgendaItem'));
   } else {
     // Browser globals (root is window)
     if (!root.DockerCon2017Api) {
       root.DockerCon2017Api = {};
     }
-    root.DockerCon2017Api.AgendaApi = factory(root.DockerCon2017Api.ApiClient, root.DockerCon2017Api.EventItem);
+    root.DockerCon2017Api.AgendaApi = factory(root.DockerCon2017Api.ApiClient, root.DockerCon2017Api.AgendaItem);
   }
-}(this, function(ApiClient, EventItem) {
+}(this, function(ApiClient, AgendaItem) {
   'use strict';
 
   /**
@@ -60,7 +60,7 @@
      * Callback function to receive the result of the agendaGet operation.
      * @callback module:api/AgendaApi~agendaGetCallback
      * @param {String} error Error message, if any.
-     * @param {Array.<module:model/EventItem>} data The data returned by the service call.
+     * @param {Array.<module:model/AgendaItem>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -72,7 +72,7 @@
      * @param {Number} opts.skip number of records to skip for pagination
      * @param {Number} opts.limit maximum number of records to return
      * @param {module:api/AgendaApi~agendaGetCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link Array.<module:model/EventItem>}
+     * data is of type: {@link Array.<module:model/AgendaItem>}
      */
     this.agendaGet = function(opts, callback) {
       opts = opts || {};
@@ -94,7 +94,7 @@
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [EventItem];
+      var returnType = [AgendaItem];
 
       return this.apiClient.callApi(
         '/agenda', 'GET',
@@ -115,7 +115,7 @@
      * Adds an event
      * Adds an event to the system
      * @param {Object} opts Optional parameters
-     * @param {module:model/EventItem} opts.eventItem Event to add
+     * @param {module:model/AgendaItem} opts.eventItem Event to add
      * @param {module:api/AgendaApi~agendaPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.agendaPost = function(opts, callback) {
