@@ -15,7 +15,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
 
-import io.swagger.client.model.EventItem;
+import io.swagger.client.model.AgendaItem;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -96,11 +96,11 @@ public class AgendaApi {
      * @param searchString pass an optional search string for looking up events (optional)
      * @param skip number of records to skip for pagination (optional)
      * @param limit maximum number of records to return (optional)
-     * @return List&lt;EventItem&gt;
+     * @return List&lt;AgendaItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<EventItem> agendaGet(String searchString, Integer skip, Integer limit) throws ApiException {
-        ApiResponse<List<EventItem>> resp = agendaGetWithHttpInfo(searchString, skip, limit);
+    public List<AgendaItem> agendaGet(String searchString, Integer skip, Integer limit) throws ApiException {
+        ApiResponse<List<AgendaItem>> resp = agendaGetWithHttpInfo(searchString, skip, limit);
         return resp.getData();
     }
 
@@ -110,12 +110,12 @@ public class AgendaApi {
      * @param searchString pass an optional search string for looking up events (optional)
      * @param skip number of records to skip for pagination (optional)
      * @param limit maximum number of records to return (optional)
-     * @return ApiResponse&lt;List&lt;EventItem&gt;&gt;
+     * @return ApiResponse&lt;List&lt;AgendaItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<EventItem>> agendaGetWithHttpInfo(String searchString, Integer skip, Integer limit) throws ApiException {
+    public ApiResponse<List<AgendaItem>> agendaGetWithHttpInfo(String searchString, Integer skip, Integer limit) throws ApiException {
         com.squareup.okhttp.Call call = agendaGetCall(searchString, skip, limit, null, null);
-        Type localVarReturnType = new TypeToken<List<EventItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<AgendaItem>>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
@@ -129,7 +129,7 @@ public class AgendaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call agendaGetAsync(String searchString, Integer skip, Integer limit, final ApiCallback<List<EventItem>> callback) throws ApiException {
+    public com.squareup.okhttp.Call agendaGetAsync(String searchString, Integer skip, Integer limit, final ApiCallback<List<AgendaItem>> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -151,12 +151,12 @@ public class AgendaApi {
         }
 
         com.squareup.okhttp.Call call = agendaGetCall(searchString, skip, limit, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<List<EventItem>>(){}.getType();
+        Type localVarReturnType = new TypeToken<List<AgendaItem>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /* Build call for agendaPost */
-    private com.squareup.okhttp.Call agendaPostCall(EventItem eventItem, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call agendaPostCall(AgendaItem eventItem, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = eventItem;
         
 
@@ -203,7 +203,7 @@ public class AgendaApi {
      * @param eventItem Event to add (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void agendaPost(EventItem eventItem) throws ApiException {
+    public void agendaPost(AgendaItem eventItem) throws ApiException {
         agendaPostWithHttpInfo(eventItem);
     }
 
@@ -214,7 +214,7 @@ public class AgendaApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> agendaPostWithHttpInfo(EventItem eventItem) throws ApiException {
+    public ApiResponse<Void> agendaPostWithHttpInfo(AgendaItem eventItem) throws ApiException {
         com.squareup.okhttp.Call call = agendaPostCall(eventItem, null, null);
         return apiClient.execute(call);
     }
@@ -227,7 +227,7 @@ public class AgendaApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call agendaPostAsync(EventItem eventItem, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call agendaPostAsync(AgendaItem eventItem, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;

@@ -1,7 +1,7 @@
 package io.swagger.client.api;
 
 import io.swagger.client.ApiException;
-import io.swagger.client.model.EventItem;
+import io.swagger.client.model.AgendaItem;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class AgendaApiTest {
         String searchString = null;
         Integer skip = null;
         Integer limit = null;
-        // List<EventItem> response = api.agendaGet(searchString, skip, limit);
+        // List<AgendaItem> response = api.agendaGet(searchString, skip, limit);
 
         // TODO: test validations
     }
@@ -45,7 +45,7 @@ public class AgendaApiTest {
      */
     @Test
     public void agendaPostTest() throws ApiException {
-        EventItem eventItem = null;
+        AgendaItem eventItem = null;
         // api.agendaPost(eventItem);
 
         // TODO: test validations
