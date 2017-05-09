@@ -7,7 +7,7 @@ import io.swagger.api.factories.AgendaApiServiceFactory;
 import io.swagger.annotations.ApiParam;
 import io.swagger.jaxrs.*;
 
-import io.swagger.model.EventItem;
+import io.swagger.model.AgendaItem;
 
 import java.util.List;
 import io.swagger.api.NotFoundException;
@@ -26,7 +26,7 @@ import javax.ws.rs.*;
 
 
 @io.swagger.annotations.Api(description = "the agenda API")
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-05-02T19:22:37.712Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-05-09T12:14:58.613Z")
 public class AgendaApi  {
    private final AgendaApiService delegate = AgendaApiServiceFactory.getAgendaApi();
 
@@ -34,11 +34,11 @@ public class AgendaApi  {
     
     
     @Produces({ "application/json" })
-    @io.swagger.annotations.ApiOperation(value = "Searches list of events", notes = "By passing in the appropriate options, you can search for available events in the system ", response = EventItem.class, responseContainer = "List", tags={ "agenda", })
+    @io.swagger.annotations.ApiOperation(value = "Searches list of events", notes = "By passing in the appropriate options, you can search for available events in the system ", response = AgendaItem.class, responseContainer = "List", tags={ "agenda", })
     @io.swagger.annotations.ApiResponses(value = { 
-        @io.swagger.annotations.ApiResponse(code = 200, message = "Search results matching criteria", response = EventItem.class, responseContainer = "List"),
+        @io.swagger.annotations.ApiResponse(code = 200, message = "Search results matching criteria", response = AgendaItem.class, responseContainer = "List"),
         
-        @io.swagger.annotations.ApiResponse(code = 400, message = "bad input parameter", response = EventItem.class, responseContainer = "List") })
+        @io.swagger.annotations.ApiResponse(code = 400, message = "bad input parameter", response = AgendaItem.class, responseContainer = "List") })
     public Response agendaGet(@ApiParam(value = "pass an optional search string for looking up events") @QueryParam("searchString") String searchString
 ,@ApiParam(value = "number of records to skip for pagination") @QueryParam("skip") Integer skip
 ,@ApiParam(value = "maximum number of records to return") @QueryParam("limit") Integer limit
@@ -57,7 +57,7 @@ public class AgendaApi  {
         @io.swagger.annotations.ApiResponse(code = 400, message = "invalid input, object invalid", response = void.class),
         
         @io.swagger.annotations.ApiResponse(code = 409, message = "an existing item already exists", response = void.class) })
-    public Response agendaPost(@ApiParam(value = "Event to add" ) EventItem eventItem
+    public Response agendaPost(@ApiParam(value = "Event to add" ) AgendaItem eventItem
 ,@Context SecurityContext securityContext)
     throws NotFoundException {
         return delegate.agendaPost(eventItem,securityContext);

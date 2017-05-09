@@ -32,23 +32,20 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * SpeakerItem
+ * AgendaItem
  */
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-05-09T12:14:58.613Z")
-public class SpeakerItem   {
+public class AgendaItem   {
   @JsonProperty("id")
   private String id = null;
 
   @JsonProperty("name")
   private String name = null;
 
-  @JsonProperty("title")
-  private String title = null;
+  @JsonProperty("date")
+  private String date = null;
 
-  @JsonProperty("profile")
-  private String profile = null;
-
-  public SpeakerItem id(String id) {
+  public AgendaItem id(String id) {
     this.id = id;
     return this;
   }
@@ -66,7 +63,7 @@ public class SpeakerItem   {
     this.id = id;
   }
 
-  public SpeakerItem name(String name) {
+  public AgendaItem name(String name) {
     this.name = name;
     return this;
   }
@@ -75,7 +72,7 @@ public class SpeakerItem   {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(example = "Ben Golub", required = true, value = "")
+  @ApiModelProperty(example = "After Party", required = true, value = "")
   public String getName() {
     return name;
   }
@@ -84,40 +81,22 @@ public class SpeakerItem   {
     this.name = name;
   }
 
-  public SpeakerItem title(String title) {
-    this.title = title;
+  public AgendaItem date(String date) {
+    this.date = date;
     return this;
   }
 
    /**
-   * Get title
-   * @return title
+   * Get date
+   * @return date
   **/
-  @ApiModelProperty(example = "CEO, Docker", required = true, value = "")
-  public String getTitle() {
-    return title;
+  @ApiModelProperty(example = "2017-04-18T19:30:00.000Z", required = true, value = "")
+  public String getDate() {
+    return date;
   }
 
-  public void setTitle(String title) {
-    this.title = title;
-  }
-
-  public SpeakerItem profile(String profile) {
-    this.profile = profile;
-    return this;
-  }
-
-   /**
-   * Get profile
-   * @return profile
-  **/
-  @ApiModelProperty(example = "Ben Golub is a serial entrepreneur and start-up CEO, and the current CEO of Docker, the company behind the Docker open source platform, and the chief sponsor of the Docker ecosystem. Docker is an open platform for developers and system administrators to build, ship, run and orchestrate distributed applications. Prior to Docker, Golub was CEO of Gluster, the open source, scale out storage company, which was successfully acquired by Red Hat in 2011. Prior to Gluster, Golub was CEO of social media pioneer Plaxo, which was acquired by Comcast in 2008. Prior to Plaxo, Golub spent eight years at VeriSign, Inc., serving as Chief Marketing Officer, as Senior Vice President of the security and payments business, and as General Manager of VeriSign&#39;s managed security services business. Ben tweets at @golubbe", required = true, value = "")
-  public String getProfile() {
-    return profile;
-  }
-
-  public void setProfile(String profile) {
-    this.profile = profile;
+  public void setDate(String date) {
+    this.date = date;
   }
 
 
@@ -129,28 +108,26 @@ public class SpeakerItem   {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SpeakerItem speakerItem = (SpeakerItem) o;
-    return Objects.equals(this.id, speakerItem.id) &&
-        Objects.equals(this.name, speakerItem.name) &&
-        Objects.equals(this.title, speakerItem.title) &&
-        Objects.equals(this.profile, speakerItem.profile);
+    AgendaItem agendaItem = (AgendaItem) o;
+    return Objects.equals(this.id, agendaItem.id) &&
+        Objects.equals(this.name, agendaItem.name) &&
+        Objects.equals(this.date, agendaItem.date);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, title, profile);
+    return Objects.hash(id, name, date);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SpeakerItem {\n");
+    sb.append("class AgendaItem {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    profile: ").append(toIndentedString(profile)).append("\n");
+    sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("}");
     return sb.toString();
   }

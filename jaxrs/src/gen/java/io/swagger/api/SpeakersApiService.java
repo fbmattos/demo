@@ -15,7 +15,7 @@ import java.io.InputStream;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.SecurityContext;
 
-@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-05-02T19:22:37.712Z")
+@javax.annotation.Generated(value = "class io.swagger.codegen.languages.JavaJerseyServerCodegen", date = "2017-05-09T12:14:58.613Z")
 public abstract class SpeakersApiService {
     public abstract Response speakersGet(String searchString,Integer skip,Integer limit,SecurityContext securityContext) throws NotFoundException;
     public abstract Response speakersPost(SpeakerItem speakerItem,SecurityContext securityContext) throws NotFoundException;
