@@ -53,14 +53,14 @@ namespace IO.Swagger.Controllers
         [HttpGet]
         [Route("/DockerCon17/DockerCon17/1.0.0/agenda")]
         [SwaggerOperation("AgendaGet")]
-        [SwaggerResponse(200, type: typeof(List<EventItem>))]
+        [SwaggerResponse(200, type: typeof(List<AgendaItem>))]
         public virtual IActionResult AgendaGet([FromQuery]string searchString, [FromQuery]int? skip, [FromQuery]int? limit)
         { 
             string exampleJson = null;
             
             var example = exampleJson != null
-            ? JsonConvert.DeserializeObject<List<EventItem>>(exampleJson)
-            : default(List<EventItem>);
+            ? JsonConvert.DeserializeObject<List<AgendaItem>>(exampleJson)
+            : default(List<AgendaItem>);
             return new ObjectResult(example);
         }
 
@@ -76,7 +76,7 @@ namespace IO.Swagger.Controllers
         [HttpPost]
         [Route("/DockerCon17/DockerCon17/1.0.0/agenda")]
         [SwaggerOperation("AgendaPost")]
-        public virtual void AgendaPost([FromBody]EventItem eventItem)
+        public virtual void AgendaPost([FromBody]AgendaItem eventItem)
         { 
             throw new NotImplementedException();
         }
