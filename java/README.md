@@ -75,7 +75,7 @@ public class AgendaApiExample {
         Integer skip = 56; // Integer | number of records to skip for pagination
         Integer limit = 56; // Integer | maximum number of records to return
         try {
-            List<EventItem> result = apiInstance.agendaGet(searchString, skip, limit);
+            List<AgendaItem> result = apiInstance.agendaGet(searchString, skip, limit);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling AgendaApi#agendaGet");
@@ -100,7 +100,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
- - [EventItem](docs/EventItem.md)
+ - [AgendaItem](docs/AgendaItem.md)
  - [SpeakerItem](docs/SpeakerItem.md)
 
 

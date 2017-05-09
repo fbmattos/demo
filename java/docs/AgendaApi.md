@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="agendaGet"></a>
 # **agendaGet**
-> List&lt;EventItem&gt; agendaGet(searchString, skip, limit)
+> List&lt;AgendaItem&gt; agendaGet(searchString, skip, limit)
 
 Searches list of events
 
@@ -28,7 +28,7 @@ String searchString = "searchString_example"; // String | pass an optional searc
 Integer skip = 56; // Integer | number of records to skip for pagination
 Integer limit = 56; // Integer | maximum number of records to return
 try {
-    List<EventItem> result = apiInstance.agendaGet(searchString, skip, limit);
+    List<AgendaItem> result = apiInstance.agendaGet(searchString, skip, limit);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AgendaApi#agendaGet");
@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;EventItem&gt;**](EventItem.md)
+[**List&lt;AgendaItem&gt;**](AgendaItem.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Adds an event to the system
 
 
 AgendaApi apiInstance = new AgendaApi();
-EventItem eventItem = new EventItem(); // EventItem | Event to add
+AgendaItem eventItem = new AgendaItem(); // AgendaItem | Event to add
 try {
     apiInstance.agendaPost(eventItem);
 } catch (ApiException e) {
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventItem** | [**EventItem**](EventItem.md)| Event to add | [optional]
+ **eventItem** | [**AgendaItem**](AgendaItem.md)| Event to add | [optional]
 
 ### Return type
 
