@@ -35,7 +35,7 @@ import java.util.*;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 
-import io.swagger.client.model.EventItem;
+import io.swagger.client.model.AgendaItem;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
@@ -73,9 +73,9 @@ public class AgendaApi {
    * @param searchString pass an optional search string for looking up events
    * @param skip number of records to skip for pagination
    * @param limit maximum number of records to return
-   * @return List<EventItem>
+   * @return List<AgendaItem>
   */
-  public List<EventItem> agendaGet (String searchString, Integer skip, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public List<AgendaItem> agendaGet (String searchString, Integer skip, Integer limit) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
      Object postBody = null;
   
 
@@ -115,7 +115,7 @@ public class AgendaApi {
       try {
         String localVarResponse = apiInvoker.invokeAPI (basePath, path, "GET", queryParams, postBody, headerParams, formParams, contentType, authNames);
         if(localVarResponse != null){
-           return (List<EventItem>) ApiInvoker.deserialize(localVarResponse, "array", EventItem.class);
+           return (List<AgendaItem>) ApiInvoker.deserialize(localVarResponse, "array", AgendaItem.class);
         } else {
            return null;
         }
@@ -141,7 +141,7 @@ public class AgendaApi {
    * By passing in the appropriate options, you can search for available events in the system 
    * @param searchString pass an optional search string for looking up events   * @param skip number of records to skip for pagination   * @param limit maximum number of records to return
   */
-  public void agendaGet (String searchString, Integer skip, Integer limit, final Response.Listener<List<EventItem>> responseListener, final Response.ErrorListener errorListener) {
+  public void agendaGet (String searchString, Integer skip, Integer limit, final Response.Listener<List<AgendaItem>> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = null;
 
   
@@ -185,7 +185,7 @@ public class AgendaApi {
           @Override
           public void onResponse(String localVarResponse) {
             try {
-              responseListener.onResponse((List<EventItem>) ApiInvoker.deserialize(localVarResponse,  "array", EventItem.class));
+              responseListener.onResponse((List<AgendaItem>) ApiInvoker.deserialize(localVarResponse,  "array", AgendaItem.class));
             } catch (ApiException exception) {
                errorListener.onErrorResponse(new VolleyError(exception));
             }
@@ -206,7 +206,7 @@ public class AgendaApi {
    * @param eventItem Event to add
    * @return void
   */
-  public void agendaPost (EventItem eventItem) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
+  public void agendaPost (AgendaItem eventItem) throws TimeoutException, ExecutionException, InterruptedException, ApiException {
      Object postBody = eventItem;
   
 
@@ -269,7 +269,7 @@ public class AgendaApi {
    * Adds an event to the system
    * @param eventItem Event to add
   */
-  public void agendaPost (EventItem eventItem, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
+  public void agendaPost (AgendaItem eventItem, final Response.Listener<String> responseListener, final Response.ErrorListener errorListener) {
     Object postBody = eventItem;
 
   
