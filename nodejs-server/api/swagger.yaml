@@ -60,7 +60,7 @@ paths:
           schema:
             type: "array"
             items:
-              $ref: "#/definitions/EventItem"
+              $ref: "#/definitions/AgendaItem"
         400:
           description: "bad input parameter"
       x-swagger-router-controller: "Agenda"
@@ -80,7 +80,7 @@ paths:
         description: "Event to add"
         required: false
         schema:
-          $ref: "#/definitions/EventItem"
+          $ref: "#/definitions/AgendaItem"
       responses:
         201:
           description: "item created"
@@ -156,7 +156,7 @@ paths:
           description: "an existing item already exists"
       x-swagger-router-controller: "Speakers"
 definitions:
-  EventItem:
+  AgendaItem:
     type: "object"
     required:
     - "date"
@@ -188,7 +188,7 @@ definitions:
         example: "12345"
       name:
         type: "string"
-        example: "BEN GOLUB"
+        example: "Ben Golub"
       title:
         type: "string"
         example: "CEO, Docker"

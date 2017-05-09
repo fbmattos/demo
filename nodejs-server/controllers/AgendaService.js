@@ -26,7 +26,7 @@ exports.agendaGET = function(args, res, next) {
 exports.agendaPOST = function(args, res, next) {
   /**
    * parameters expected in the args:
-  * eventItem (EventItem)
+  * eventItem (AgendaItem)
   **/
   // no response value expected for this operation
   res.end();
