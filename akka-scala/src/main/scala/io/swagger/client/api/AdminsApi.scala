@@ -23,7 +23,7 @@ object AdminsApi {
    * @param inventoryItem Inventory item to add
    */
   def addInventory(inventoryItem: Option[InventoryItem] = None): ApiRequest[Unit] =
-    ApiRequest[Unit](ApiMethods.POST, "https://stage-virtserver.swaggerhub.com/fbmattos1/simple1/1.0.0", "/inventory", "application/json")
+    ApiRequest[Unit](ApiMethods.POST, "https://virtserver.swaggerhub.com/fbmattos/simple1/1.0.0", "/inventory", "application/json")
       .withBody(inventoryItem)
       .withSuccessResponse[Unit](201)
       .withErrorResponse[Unit](400)
