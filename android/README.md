@@ -58,20 +58,17 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```java
 
-import io.swagger.client.api.AgendaApi;
+import io.swagger.client.api.AdminsApi;
 
-public class AgendaApiExample {
+public class AdminsApiExample {
 
     public static void main(String[] args) {
-        AgendaApi apiInstance = new AgendaApi();
-        String searchString = "searchString_example"; // String | pass an optional search string for looking up events
-        Integer skip = 56; // Integer | number of records to skip for pagination
-        Integer limit = 56; // Integer | maximum number of records to return
+        AdminsApi apiInstance = new AdminsApi();
+        InventoryItem inventoryItem = new InventoryItem(); // InventoryItem | Inventory item to add
         try {
-            List<AgendaItem> result = apiInstance.agendaGet(searchString, skip, limit);
-            System.out.println(result);
+            apiInstance.addInventory(inventoryItem);
         } catch (ApiException e) {
-            System.err.println("Exception when calling AgendaApi#agendaGet");
+            System.err.println("Exception when calling AdminsApi#addInventory");
             e.printStackTrace();
         }
     }
@@ -81,20 +78,18 @@ public class AgendaApiExample {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://virtserver.swaggerhub.com/DockerCon17/DockerCon17/1.0.0*
+All URIs are relative to *https://virtserver.swaggerhub.com/fbmattos/simple123/1.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AgendaApi* | [**agendaGet**](docs/AgendaApi.md#agendaGet) | **GET** /agenda | Searches list of events
-*AgendaApi* | [**agendaPost**](docs/AgendaApi.md#agendaPost) | **POST** /agenda | Adds an event
-*SpeakersApi* | [**speakersGet**](docs/SpeakersApi.md#speakersGet) | **GET** /speakers | Searches list of speakers
-*SpeakersApi* | [**speakersPost**](docs/SpeakersApi.md#speakersPost) | **POST** /speakers | Adds a speaker
+*AdminsApi* | [**addInventory**](docs/AdminsApi.md#addInventory) | **POST** /inventory | adds an inventory item
+*DevelopersApi* | [**searchInventory**](docs/DevelopersApi.md#searchInventory) | **GET** /inventory | searches inventory
 
 
 ## Documentation for Models
 
- - [AgendaItem](docs/AgendaItem.md)
- - [SpeakerItem](docs/SpeakerItem.md)
+ - [InventoryItem](docs/InventoryItem.md)
+ - [Manufacturer](docs/Manufacturer.md)
 
 
 ## Documentation for Authorization
@@ -108,5 +103,5 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Author
 
-support@swaggerhub.com
+you@your-company.com
 
