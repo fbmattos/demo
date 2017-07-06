@@ -13,18 +13,18 @@ import io.swagger.client.core.ApiKeyLocations._
 object DevelopersApi {
 
   /**
-   * By passing in the appropriate options, you can search for available inventory in the system # Heading 1 some info about it: * item 1 * item 2 * item 3 ## Heading 2 some info 
+   * By passing in the appropriate options, you can search for available inventory in the system 
    * 
    * Expected answers:
    *   code 200 : Seq[InventoryItem] (search results matching criteria)
    *   code 400 :  (bad input parameter)
    * 
-   * @param searchString Pass an optional search string for looking up inventory. *Example:* \&quot;pets\&quot; 
-   * @param skip Number of records to skip for pagination *Notes:* You may skip as many as you&#39;d like 
-   * @param limit Maximum number of records to return *Notes:* Check out the description 
+   * @param searchString pass an optional search string for looking up inventory
+   * @param skip number of records to skip for pagination
+   * @param limit maximum number of records to return
    */
   def searchInventory(searchString: Option[String] = None, skip: Option[Int] = None, limit: Option[Int] = None): ApiRequest[Seq[InventoryItem]] =
-    ApiRequest[Seq[InventoryItem]](ApiMethods.GET, "https://virtserver.swaggerhub.com/fbmattos/simple1/1.0.0", "/inventory", "application/json")
+    ApiRequest[Seq[InventoryItem]](ApiMethods.GET, "https://virtserver.swaggerhub.com/fbmattos/shub-4335/1.0.0", "/inventory", "application/json")
       .withQueryParam("searchString", searchString)
       .withQueryParam("skip", skip)
       .withQueryParam("limit", limit)
