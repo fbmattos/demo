@@ -1,0 +1,34 @@
+---
+swagger: "2.0"
+info:
+  description: swg-347
+  version: 1.0.0
+  title: SWG-347
+paths:
+  /getProperty:
+    get:
+      tags:
+      - get Property
+      summary: Get Proeprty
+      description: Get Property
+      operationId: getProperty
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - name: X-AppId
+        in: header
+        description: App ID
+        required: true
+        type: integer
+        default: 134
+      - name: X-Token
+        in: header
+        description: Token to identify caller
+        required: true
+        type: string
+      responses:
+        201:
+          description: Get Property
+definitions: {}
